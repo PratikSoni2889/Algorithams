@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Algorithams.NumbersAloritham;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -14,10 +15,12 @@ namespace Algorithams
 
         private static void PrintAlgorithamList()
         {
-            Console.WriteLine("===============================");
+            Console.Clear();
+            Console.WriteLine("\n===============================\n");
             Console.WriteLine($"1. Get Count of duplicate characters from the string\n" +
-                              $"2. Print all distinct characters of a string in order (3 Methods)\n");
-            Console.WriteLine("===============================");
+                              $"2. Print all distinct characters of a string in order (3 Methods)\n" +
+                              $"3. Validate if number is palindrome");
+            Console.WriteLine("\n===============================\n");
             Console.WriteLine("NOTE: Press ESC anytime to EXIT");
             Console.Write("Please enter the algoritham number you want to execute: ");
             var input = Console.ReadLine();
@@ -35,11 +38,16 @@ namespace Algorithams
                 case "2":
                     RemoveRepetativeCharacterFromStringAndThenPrintTheString();
                     break;
+                case "3":
+                    PalindromeNumber.ValidatePalindromeNumber();
+                    break;
                 default:
                     Console.WriteLine("Oops! Please enter valid selection.");
                     PrintAlgorithamList();
                     break;
             }
+
+            PrintAlgorithamList();
         }
 
         private static void RemoveRepetativeCharacterFromStringAndThenPrintTheString()
@@ -49,8 +57,6 @@ namespace Algorithams
                               $"For example, if the input string is “Geeks for Geeks”, then output should be ‘for’ \n" +
                               $"and if input string is “Geeks Quiz”, then output should be ‘GksQuiz’. \n\n" +
                               $"The distinct characters should be printed in same order as they appear in input string.");
-
-
 
             throw new NotImplementedException();
         }
@@ -78,7 +84,6 @@ namespace Algorithams
             }
 
             Console.WriteLine("Execution completed successfully.");
-            PrintAlgorithamList();
         }
     }
 }
